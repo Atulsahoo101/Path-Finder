@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SIH</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .left,
+        .right {
+            width: 45%;
+            height: 100px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        .line {
+            width: 10px;
+            height: 100%;
+            border-left: 2px dotted #000;
+            margin-left: 20px;
+            /* Adjust this to control the spacing between left and right divs */
+        }
+        .container-fluid {
+            margin-top: 20px;
+        }
+        #timeline {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-badge {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            animation: fadeIn 1s ease;
+        }
+        .img-wraping img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .importo {
+            color: #ec0a0a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .causale {
+            font-weight: bold;
+            color: #333;
+        }
+
+        #timeline {
+            list-style: none;
+            position: relative;
+            margin: 50px auto;
+            width: 90%;
+        }
+
+        #timeline:before {
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 2px;
+            background-color: #4997cd;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        #timeline .timeline-badge {
+            color: #fff;
+            width: 25px;
+            height: 25px;
+            font-size: 1.2em;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -13px;
+            background-color: #fff;
+            z-index: 6;
+            border-radius: 50%;
+            border: 2px solid #4997cd;
+        }
+
+
+
+
+
+
+
+        #timeline .timeline-movement {
+            position: relative;
+            margin-bottom: 10rem;
+        }
+
+
+        #timeline .timeline-movement .timeline-item .timeline-panel {
+            border: 1px solid #d4d4d4;
+            border-radius: 3px;
+            background-color: #FFFFFF;
+            color: #666;
+            padding: 10px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+        }
+
+        #timeline .timeline-movement .timeline-item .timeline-panel .timeline-panel-ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="timeline" class="col-md-6 offset-md-3">
+                <br>
+                <div id="container"></div>
+
+                
+                <div style="display: none;" id="template-left">
+                    
+                    <div class="row timeline-movement">
+                        <div class="timeline-badge center-left">
+
+                        </div>
+                        <div class="col-sm-6  timeline-item">
+                            <div class="row">
+                                <div class="col-sm-11">
+                                    <div class="timeline-panel credits  anim animate  fadeInLeft">
+                                        <ul class="timeline-panel-ul">
+                                            <div class="lefting-wrap">
+                                                <li class="img-wraping"><a href="#"><img
+                                                            src="http://via.placeholder.com/250/000000"
+                                                            class="img-responsive" alt="user-image" /></a></li>
+                                            </div>
+                                            <div class="righting-wrap">
+                                                <li><a href="#" class="importo">Mussum ipsum cacilds</a></li>
+                                                <li><span class="causale" style="color:#000; font-weight: 600;">Engineer
+                                                    </span> </li>
+                                                <li><span class="causale">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit. </span> </li>
+                                                <li>
+                                                    <p><small class="text-muted"><i
+                                                                class="glyphicon glyphicon-time"></i> 11/01/2018,
+                                                            13:05"</small></p>
+                                                </li>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: none;" id="template-right">
+                    
+                    <div class="row timeline-movement">
+                        <div class="timeline-badge center-right">
+
+                        </div>
+                        <div class="offset-sm-6 col-sm-6  timeline-item">
+                            <div class="row">
+                                <div class="offset-sm-1 col-sm-11">
+                                    <div class="timeline-panel debits  anim animate  fadeInRight">
+                                        <ul class="timeline-panel-ul">
+                                            <div class="lefting-wrap">
+                                                <li class="img-wraping"><a href="#"><img
+                                                            src="http://via.placeholder.com/250/000000"
+                                                            class="img-responsive" alt="user-image" /></a></li>
+                                            </div>
+                                            <div class="righting-wrap">
+                                                <li><a href="#" class="importo">Mussum ipsum cacilds</a></li>
+                                                <li><span class="causale" style="color:#000; font-weight: 600;">Web
+                                                        Designer </span> </li>
+                                                <li><span class="causale">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit. </span> </li>
+                                                <li>
+                                                    <p><small class="text-muted"><i
+                                                                class="glyphicon glyphicon-time"></i> 12/01/2018,
+                                                            13:05"</small></p>
+                                                </li>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        const searchedLocations = [
+            {
+                name: "New Place 1",
+                rating: "5 stars",
+                // Add other data fields as needed
+            },
+            {
+                name: "New Place 2",
+                rating: "4.5 stars",
+                // Add other data fields as needed
+            },
+            {
+                name: "New Place 3",
+                rating: "4.5 stars",
+                // Add other data fields as needed
+            },
+            // Add more data objects as needed
+        ];
+
+        // Function to populate the timeline with initial data
+        function populateTimelineWithData() {
+            const container = document.getElementById("container");
+            searchedLocations.forEach((locationData, index) => {
+                const template = index % 2 === 0 ? document.getElementById("template-left") : document.getElementById("template-right");
+                const clone = template.cloneNode(true);
+                clone.style.display = "block"; // Show the cloned element
+
+                // Update content from searchedLocations array
+                clone.querySelector('.importo').textContent = locationData.name;
+                clone.querySelector('.causale').textContent = locationData.rating;
+                // Update other content fields as needed
+
+                container.prepend(clone);
+            });
+        }
+
+        // Call the function to populate the timeline when the page loads
+        window.onload = populateTimelineWithData;
+    </script>
+
+</body>
+
+</html>
